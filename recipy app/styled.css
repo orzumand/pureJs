@@ -135,6 +135,25 @@ header button {
   border-radius: 0px 3px 3px 0px;
   border-bottom: 3px solid red;
 }
+.meal:hover .more {
+  display: inline-block;
+}
+.more {
+  position: absolute;
+  bottom: 1rem;
+  right: 0;
+  padding: 0.25rem 0.5rem;
+  background-color: #fff;
+  border-right: 5px solid greenyellow;
+  border-bottom: 2px solid greenyellow;
+  border-top: 2px solid greenyellow;
+  cursor: pointer;
+  display: none;
+}
+.more:hover i {
+  padding-left: 4px;
+  margin-right: -4px;
+}
 
 .meal-header img {
   height: 250px;

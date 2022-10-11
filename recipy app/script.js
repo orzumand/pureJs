@@ -5,6 +5,7 @@ const searchTerm = document.getElementById("search-term");
 const mealPopup = document.getElementById("meal-popup");
 const popupCloseBtn = document.getElementById("close-popup");
 const mealInfoEl = document.getElementById("meal-info");
+
 getRandomMeal();
 
 async function getRandomMeal() {
@@ -44,10 +45,12 @@ addMeal = (mealData, random = false) => {
             random
               ? ` <spam class="random">
               Random Recipe
-            </spam>`
+            </spam> 
+            `
               : ""
           }
-            <img
+          <div  class="more">More... <i class="fas fa-arrow-right"></i></div>
+          <img
              src="${mealData.strMealThumb}" 
              alt="${mealData.strMeal}">
           </div>
@@ -60,6 +63,7 @@ addMeal = (mealData, random = false) => {
         </div>`;
 
   const btn = meal.querySelector(".meal-body   .fav-btn");
+  const moreEl = meal.querySelector(".more");
   btn.addEventListener("click", () => {
     if (btn.classList.contains("active")) {
       removeMealFromLs(mealData.idMeal);
@@ -70,7 +74,7 @@ addMeal = (mealData, random = false) => {
     }
     fetchFavMeals();
   });
-  meal.addEventListener("click", () => {
+  moreEl.addEventListener("click", () => {
     showMealInfo(mealData);
   });
   mealsEl.appendChild(meal);
